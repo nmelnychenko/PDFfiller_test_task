@@ -1,4 +1,5 @@
-"plugins": ["stylelint-scss", "stylelint-selector-bem-pattern"],
+{
+  "plugins": ["stylelint-scss", "stylelint-selector-bem-pattern"],
   "rules": {
     "indentation": 2,
     "string-quotes": "double",
@@ -92,5 +93,5 @@
     "number-no-trailing-zeros": true,
     "declaration-block-no-duplicate-properties": true,
     "scss/selector-no-redundant-nesting-selector": true
-  },
+  }
 }
