@@ -1,0 +1,31 @@
+-
+  var documentList = [
+    {
+      title: "name_of_document",
+      image: "https://cloudinary-res.cloudinary.com/image/upload/c_limit,h_540,w_770/f_auto,fl_lossy,q_auto/eu84dbcuxv7uubiy9q70g.png",
+      date: "08/08/2014"
+    },
+    {
+      title: "name_of_document",
+      image: "https://cloudinary-res.cloudinary.com/image/upload/c_limit,h_540,w_770/f_auto,fl_lossy,q_auto/eu84dbcuxv7uubiy9q70g.png",
+      date: "08/08/2014"
+    },
+    {
+      title: "name_of_document",
+      image: "https://cloudinary-res.cloudinary.com/image/upload/c_limit,h_540,w_770/f_auto,fl_lossy,q_auto/eu84dbcuxv7uubiy9q70g.png",
+      date: "08/08/2014"
+    },
+  ]
+
+mixin document-list(document)
+  li.item
+    div.item__content
+      img.item__image(src= document.image)
+      div.item__info
+        h3.item__title= document.title
+        p.item__date Last Edited: #{document.date}
+    button.item__button.button.button--primary View Document
+
+ul.document-list
+  for document in documentList
+    +document-list(document)

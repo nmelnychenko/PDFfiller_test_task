@@ -1,0 +1,14 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.section {
+  padding: 40px 0;
+
+  &__inner {
+    max-width: 1200px;
+    padding: 0 50px;
+  }
+}

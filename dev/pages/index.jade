@@ -1,0 +1,7 @@
+extends ../templates/default/index.jade
+block meta
+  - var title = 'PDFfiller test task'
+block page
+  include ../templates/default/layout.jade
+    block section-content
+      include ../components/document-list.jade
