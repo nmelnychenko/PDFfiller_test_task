@@ -26,11 +26,12 @@ gulp.task("pug", function() {
         pretty: true
       })
     )
-    .pipe(gulp.dest("public"));
+    .pipe(gulp.dest("public"))
+    .pipe(browserSync.stream());
 });
 
 gulp.task("script", function() {
-  gulp
+  return gulp
     .src("dev/js/**/*.js")
     .pipe(
       modernizr({
@@ -44,11 +45,12 @@ gulp.task("script", function() {
         extname: ".min.js"
       })
     )
-    .pipe(gulp.dest("public/js"));
+    .pipe(gulp.dest("public/js"))
+    .pipe(browserSync.stream());
 });
 
 gulp.task("fonts", function() {
-  gulp
+  return gulp
     .src("dev/fonts/*.{ttf,woff,woff2}")
     .pipe(gulp.dest("public/fonts/"));
 });
@@ -78,7 +80,8 @@ gulp.task("sass", function() {
         extname: ".min.css"
       })
     )
-    .pipe(gulp.dest("public/css"));
+    .pipe(gulp.dest("public/css"))
+    .pipe(browserSync.stream());
 });
 
 gulp.task("clean", function() {
@@ -90,15 +93,15 @@ gulp.task("build", function() {
 });
 
 gulp.task("watchHtml", function() {
-  gulp.watch("dev/**/*.jade", ["pug"]);
+  return gulp.watch("dev/**/*.jade", ["pug"]);
 });
 
 gulp.task("watchCss", function() {
-  gulp.watch("dev/sass/**/*.scss", ["sass"]);
+  return gulp.watch("dev/sass/**/*.scss", ["sass"]);
 });
 
 gulp.task("watchScript", function() {
-  gulp.watch("dev/js/**/*.js", ["script"]);
+  return gulp.watch("dev/js/**/*.js", ["script"]);
 });
 
 gulp.task("watch", function() {
@@ -115,6 +118,4 @@ gulp.task("server", function() {
   });
 });
 
-gulp.task("default", function() {
-  runseq("build", "watch", "server");
-});
+gulp.task("default", ['build', 'watch', 'server']);
