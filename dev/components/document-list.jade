@@ -3,30 +3,35 @@
     {
       title: "name_of_document",
       image: "https://cloudinary-res.cloudinary.com/image/upload/c_limit,h_540,w_770/f_auto,fl_lossy,q_auto/eu84dbcuxv7uubiy9q70g.png",
+      imageDesc: 'document preview',
       date: "08/08/2014",
       buttonType: 'primary',
     },
     {
       title: "name_of_document",
       image: "https://cloudinary-res.cloudinary.com/image/upload/c_limit,h_540,w_770/f_auto,fl_lossy,q_auto/eu84dbcuxv7uubiy9q70g.png",
+      imageDesc: 'document preview',
       date: "08/08/2014",
       buttonType: 'primary',
     },
     {
       title: "name_of_document",
       image: "https://cloudinary-res.cloudinary.com/image/upload/c_limit,h_540,w_770/f_auto,fl_lossy,q_auto/eu84dbcuxv7uubiy9q70g.png",
+      imageDesc: 'document preview',
       date: "08/08/2014",
       buttonType: 'primary',
     },
     //- {
     //-   title: "name_of_document",
     //-   image: "https://cloudinary-res.cloudinary.com/image/upload/c_limit,h_540,w_770/f_auto,fl_lossy,q_auto/eu84dbcuxv7uubiy9q70g.png",
+    //-   imageDesc: 'document preview',
     //-   date: "08/08/2014",
     //-   buttonType: 'secondary',
     //- },
     //- {
     //-   title: "name_of_document",
     //-   image: "https://cloudinary-res.cloudinary.com/image/upload/c_limit,h_540,w_770/f_auto,fl_lossy,q_auto/eu84dbcuxv7uubiy9q70g.png",
+    //-   imageDesc: 'document preview',
     //-   date: "08/08/2014",
     //-   buttonType: 'primary',
     //-   disabledButton: true,
@@ -34,6 +39,7 @@
     //- {
     //-   title: "name_of_document",
     //-   image: "https://cloudinary-res.cloudinary.com/image/upload/c_limit,h_540,w_770/f_auto,fl_lossy,q_auto/eu84dbcuxv7uubiy9q70g.png",
+    //-   imageDesc: 'document preview',
     //-   date: "08/08/2014",
     //-   buttonType: 'secondary',
     //-   disabledButton: true,
@@ -45,7 +51,7 @@ include button.jade
 mixin document-list(document)
   li.item
     div.item__content
-      img.item__image(src= document.image)
+      img.item__image(src= document.image, alt= document.imageDesc)
       div.item__info
         h3.item__title= document.title
         p.item__date Last Edited: #{document.date}
