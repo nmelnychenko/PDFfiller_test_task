@@ -1,8 +1,9 @@
 .document-list {
-  max-width: 290px;
+  width: 290px;
+  max-width: 100%;
 
   @media (min-width: 768px) {
-    max-width: 520px;
+    width: 520px;
   }
 }
 

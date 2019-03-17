@@ -5,10 +5,20 @@
 }
 
 .section {
+  display: flex;
+  min-height: 100vh;
   padding: 40px 0;
+  flex-direction: column;
+  justify-content: center;
+  font-family: Roboto, Arial, Helvetica, sans-serif;
 
   &__inner {
     max-width: 1200px;
-    padding: 0 50px;
+    margin: 0 auto;
+    padding: 0 10px;
+
+    @media (min-width: 768px) {
+      padding: 0 50px;
+    }
   }
 }
